@@ -14,21 +14,23 @@ const Footer = () => {
           </p>
         </div>
         <div className="footer__links">
-          {footerLinks.map((link) => (
-            <div key={link.title} className="footer__link">
-              <h3 className="font-bold">{link.title}</h3>
-              {link.links.map((item) => (
-                <Link key={item.title} href={item.url} className="text-gray-500">{item.title}</Link>
-              ))}
+          {footerLinks.map((item) => (
+            <div key={item.title} className="footer__link">
+              <h3 className="font-bold">{item.title}</h3>
+              <div className="flex flex-col gap-5">
+                {item.links.map((link) => (
+                  <Link key={link.title} href={link.url} className="text-gray-500">{link.title}</Link>
+                ))}
+              </div>
             </div>
           ))}
         </div>
-        <div className="flex justify-between items-center flex-wrap mt-10 border-t border-gray-100 sm:px-16 px-6 py-10">
-          <p>@2023 Servis. Tüm Hakları Saklıdır</p>
-          <div className="footer__copyrights-link">
-            <Link href="/" className="text-gray-500">Privacy Policy</Link>
-            <Link href="/" className="text-gray-500">Terms of Use</Link>
-          </div>
+      </div>
+      <div className="flex justify-between items-center flex-wrap mt-10 border-t border-gray-100 sm:px-16 px-6 py-10">
+        <p>@2023 Servis. Tüm Hakları Saklıdır</p>
+        <div className="footer__copyrights-link">
+          <Link href="/" className="text-gray-500">Privacy Policy</Link>
+          <Link href="/" className="text-gray-500">Terms of Use</Link>
         </div>
       </div>
     </footer>
